@@ -22,7 +22,6 @@ module.exports = (phase) => {
       })()
   }
 
-  const basePath = '/app'
 
   const rewrites = () => {
       return [
@@ -61,7 +60,7 @@ module.exports = (phase) => {
 
   return {
       env,
-      basePath,
+      
       rewrites,
       redirects,
       headers,
