@@ -35,25 +35,39 @@ module.exports = (phase) => {
 
   const redirects = () => {
       return [
-          {
-              source: '/home',
-              destination: '/',
-              permanent: true
-          }
+        {
+            source: '/home',
+            destination: '/',
+            permanent: true
+        },
+        {
+            source: '/my-custom-redirect-home',
+            destination: '/',
+            permanent: true
+        }
       ]
   }
 
   const headers = () => {
       return [
-          {
-              source: '/about',
-              headers: [
-                  {
-                      key: "x-custom-header-1",
-                      value: "my custom header 1"
-                  }
-              ]
-          }
+        {
+            source: '/about',
+            headers: [
+                {
+                    key: "x-custom-header-1",
+                    value: "my custom header 1"
+                }
+            ]
+        },
+        {
+            source: '/my-custom-page',
+            headers: [
+                {
+                    key: "x-custom-page-header-1111",
+                    value: "my custom-page header 11001"
+                }
+            ]
+        }
       ]
   }
 
