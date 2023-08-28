@@ -1,0 +1,16 @@
+[[headers]]
+for = "/my-net-header"
+
+  [headers.values]
+  x-custom-net-header-1 = "my custom net-header 1"
+
+[[headers]]
+for = "/my-custom-page"
+
+  [headers.values]
+  x-custom-page-header-2222 = "my custom-page header 22222"
+
+[[redirects]]
+from = "/home"
+to = "/"
+status = 200
