@@ -47,6 +47,12 @@ module.exports = (phase) => {
             source: '/my-custom-redirect-home',
             destination: '/',
             permanent: true
+        },
+        {
+            source: '/',
+            destination: '/docs',
+            permanent: true,
+            basePath: false
         }
       ]
   }
