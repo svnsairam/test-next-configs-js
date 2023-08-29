@@ -14,6 +14,8 @@ module.exports = (phase) => {
   // npm run build or next build
   const isStaging = phase === PHASE_PRODUCTION_BUILD && process.env.STAGING === '1';
 
+  
+
   const env = {
       TITLE: (() => {
           if(isDev) return 'Title Dev'
@@ -23,6 +25,7 @@ module.exports = (phase) => {
   }
 
   
+  const basePath = '/docs'
 
   const rewrites = () => {
       return [
@@ -75,7 +78,7 @@ module.exports = (phase) => {
 
   return {
       env,
-      
+      basePath,
       rewrites,
       redirects,
       headers,
