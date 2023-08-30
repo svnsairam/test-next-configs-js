@@ -61,6 +61,10 @@ module.exports = (phase) => {
                 {
                     key: "x-custom-header-1",
                     value: "my custom header 1"
+                },
+                {
+                    key: "x-next-conf-key",
+                    value: "x-next-coonf-value-header"
                 }
             ]
         },
