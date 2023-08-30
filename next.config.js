@@ -32,7 +32,7 @@ module.exports = (phase) => {
             destination: '/about'
         },
         {
-            source: '/confict',
+            source: '/confictRW',
             destination: '/about'
         }
       ]
@@ -41,7 +41,7 @@ module.exports = (phase) => {
   const redirects = () => {
       return [
         {
-            source: '/confict',
+            source: '/confictRD',
             destination: '/',
             permanent: true
         },

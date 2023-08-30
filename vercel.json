@@ -1,7 +1,7 @@
 {
     "redirects": [
         {
-            "source": "/confict",
+            "source": "/confictRD",
             "destination": "/about",
             "permanent": true
         },
@@ -18,7 +18,7 @@
           "destination": "/"
         },
         {
-            "source": "/confict",
+            "source": "/confictRW",
             "destination": "/",
             "permanent": true
         }
