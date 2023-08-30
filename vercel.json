@@ -14,8 +14,15 @@
         },
         {
             "source": "/vercelJsonRedirect",
-            "destination": "/",
-            "permanent": true
+            "destination": "/about",
+            "permanent": true,
+            "has": [
+                {
+                  "type": "header",
+                  "key": "x-custom-header-1",
+                  "value": "my custom header vercel json header"
+                }
+            ]
         }
     ],
 
