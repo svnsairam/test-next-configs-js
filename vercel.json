@@ -4,7 +4,7 @@
             "source": "/confictRD",
             "destination": "/about",
             "permanent": true,
-            "has": [
+            "missing": [
                 {
                   "type": "header",
                   "key": "x-custom-header-1",
