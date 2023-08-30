@@ -7,7 +7,7 @@
             "missing": [
                 {
                   "type": "header",
-                  "key": "x-custom-header-1",
+                  "key": "newKey",
                   "value": "vercel json header"
                 }
             ]
