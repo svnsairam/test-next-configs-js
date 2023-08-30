@@ -1,0 +1,55 @@
+{
+    "redirects": [
+        {
+            "source": "/confict",
+            "destination": "/about",
+            "permanent": true
+        },
+        {
+            "source": "/vercelJsonRedirect",
+            "destination": "/",
+            "permanent": true
+        }
+    ],
+
+    "rewrites": [
+        {
+          "source": "/vercelJsonRewrite",
+          "destination": "/"
+        },
+        {
+            "source": "/confict",
+            "destination": "/",
+            "permanent": true
+        }
+    ],
+
+    "headers": [
+        {
+            "source": "/about",
+            "headers": [
+              {
+                "key": "Cache-Control",
+                "value": "public, max-age=0, must-revalidate"
+              },
+              {
+                  "key": "x-custom-header-1",
+                  "value": "my custom header vercel json header"
+              }
+            ]
+        },
+        {
+            "source": "/vercelHeader",
+            "headers": [
+              {
+                "key": "vercel json header key",
+                "value": "vercel json header value"
+              },
+              {
+                  "key": "x-custom-header-2",
+                  "value": "my custom header vercel json header 2"
+              }
+            ]
+        }
+    ]
+}

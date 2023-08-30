@@ -24,35 +24,31 @@ module.exports = (phase) => {
       })()
   }
 
-  
-  const basePath = '/docs'
 
   const rewrites = () => {
       return [
-          {
-              source: '/ab',
-              destination: '/about'
-          }
+        {
+            source: '/configJsonRewrite',
+            destination: '/about'
+        },
+        {
+            source: '/confict',
+            destination: '/about'
+        }
       ]
   }
 
   const redirects = () => {
       return [
         {
-            source: '/home',
+            source: '/confict',
             destination: '/',
             permanent: true
         },
         {
-            source: '/my-custom-redirect-home',
+            source: '/nextConfigRedirect',
             destination: '/',
             permanent: true
-        },
-        {
-            source: '/',
-            destination: '/docs',
-            permanent: true,
-            basePath: false
         }
       ]
   }
@@ -80,14 +76,11 @@ module.exports = (phase) => {
       ]
   }
 
-  const assetPrefix = isProd? 'https://cdn.mydomain.com': ''
 
   return {
       env,
-      basePath,
       rewrites,
       redirects,
-      headers,
-      assetPrefix
+      headers
   }
 }
