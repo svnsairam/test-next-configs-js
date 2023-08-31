@@ -5,18 +5,18 @@
             "destination": "/about",
             "permanent": true,
             "missing": [
-                {
-                  "type": "header",
-                  "key": "newKey",
-                  "value": "vercel json header"
-                }
+              {
+                "type": "header",
+                "key": "x-custom-header-1",
+                "value": "my custom header vercel json header"
+              }
             ]
         },
         {
             "source": "/vercelJsonRedirect",
-            "destination": "/about",
+            "destination": "www.google.com",
             "permanent": true,
-            "has": [
+            "missing": [
                 {
                   "type": "header",
                   "key": "x-custom-header-1",
@@ -29,7 +29,7 @@
     "rewrites": [
         {
           "source": "/vercelJsonRewrite",
-          "destination": "/"
+          "destination": "www.google.com"
         },
         {
             "source": "/confictRW",
