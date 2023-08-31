@@ -20,7 +20,7 @@
                 {
                   "type": "header",
                   "key": "x-custom-header-1",
-                  "value": "my custom header vercel json header"
+                  "value": "dev branch github"
                 }
             ]
         }
