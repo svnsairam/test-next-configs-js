@@ -14,15 +14,7 @@
         },
         {
             "source": "/vercelJsonRedirect",
-            "destination": "www.google.com",
-            "permanent": true,
-            "missing": [
-                {
-                  "type": "header",
-                  "key": "x-custom-header-1",
-                  "value": "my custom header vercel json header"
-                }
-            ]
+            "destination": "https://www.google.com",
         }
     ],
 
