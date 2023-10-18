@@ -1,0 +1,306 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$",
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 308,
+      "continue": true
+    },
+    {
+      "src": "/_next/__private/trace",
+      "dest": "/404",
+      "status": 404,
+      "continue": true
+    },
+    {
+      "src": "^/about(?:/)?$",
+      "headers": {
+        "x-custom-header-1": "my custom header 1",
+        "x-next-conf-key": "x-next-coonf-value-header"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/my-custom-page(?:/)?$",
+      "headers": {
+        "x-custom-page-header-1111": "my custom-page header 11001"
+      },
+      "continue": true
+    },
+    {
+      "src": "/404/?",
+      "status": 404,
+      "continue": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-prerender-revalidate"
+        }
+      ]
+    },
+    {
+      "src": "/500",
+      "status": 500,
+      "continue": true
+    },
+    {
+      "src": "^/confictRD$",
+      "headers": {
+        "Location": "/about"
+      },
+      "status": 308,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-custom-header-1",
+          "value": "my custom header vercel json header"
+        }
+      ]
+    },
+    {
+      "src": "^/vercelJsonRedirect$",
+      "headers": {
+        "Location": "www.google.com"
+      },
+      "status": 308,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-custom-header-1",
+          "value": "dev branch github"
+        }
+      ]
+    },
+    {
+      "src": "^/about$",
+      "headers": {
+        "Cache-Control": "max-age=0",
+        "x-custom-header-1": "my custom header vercel json header"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/vercelJsonRedirect$",
+      "headers": {
+        "x-custom-header-1": "my custom header vercel json header"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/vercelHeader$",
+      "headers": {
+        "vercel json header key": "vercel json header value",
+        "x-custom-header-2": "my custom header vercel json header 2"
+      },
+      "continue": true
+    },
+    {
+      "src": "^(?!/_next)/confictRD(?:/)?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
+    },
+    {
+      "src": "^(?!/_next)/nextConfigRedirect(?:/)?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/",
+      "has": [
+        {
+          "type": "header",
+          "key": "rsc"
+        }
+      ],
+      "dest": "/index.rsc",
+      "headers": {
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url"
+      },
+      "continue": true,
+      "override": true
+    },
+    {
+      "src": "^/((?!.+\\.rsc).+?)(?:/)?$",
+      "has": [
+        {
+          "type": "header",
+          "key": "rsc"
+        }
+      ],
+      "dest": "/$1.rsc",
+      "headers": {
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url"
+      },
+      "continue": true,
+      "override": true
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/vercelJsonRewrite$",
+      "dest": "www.google.com",
+      "check": true
+    },
+    {
+      "src": "^/confictRW$",
+      "dest": "/",
+      "check": true
+    },
+    {
+      "src": "/_next/data/(.*)",
+      "dest": "/_next/data/$1",
+      "check": true
+    },
+    {
+      "src": "^/(.*)\\.rsc$",
+      "dest": "/$1",
+      "has": [
+        {
+          "type": "header",
+          "key": "rsc"
+        }
+      ],
+      "check": true
+    },
+    {
+      "src": "^/configJsonRewrite(?:/)?$",
+      "dest": "/about",
+      "check": true
+    },
+    {
+      "src": "^/confictRW(?:/)?$",
+      "dest": "/about",
+      "check": true
+    },
+    {
+      "src": "^/((?!.+\\.rsc).+?)(?:/)?$",
+      "has": [
+        {
+          "type": "header",
+          "key": "rsc"
+        }
+      ],
+      "dest": "/$1.rsc",
+      "headers": {
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url"
+      },
+      "continue": true,
+      "override": true
+    },
+    {
+      "handle": "resource"
+    },
+    {
+      "src": "/.*",
+      "status": 404
+    },
+    {
+      "handle": "miss"
+    },
+    {
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media)/.+",
+      "status": 404,
+      "check": true,
+      "dest": "$0"
+    },
+    {
+      "handle": "rewrite"
+    },
+    {
+      "src": "/_next/data/(.*)",
+      "dest": "/404",
+      "status": 404
+    },
+    {
+      "handle": "hit"
+    },
+    {
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|loDsPQMg1WH\\-EdoA2p7wN)/.+",
+      "headers": {
+        "cache-control": "public,max-age=31536000,immutable"
+      },
+      "continue": true,
+      "important": true
+    },
+    {
+      "src": "/index",
+      "headers": {
+        "x-matched-path": "/"
+      },
+      "continue": true,
+      "important": true
+    },
+    {
+      "src": "/((?!index$).*)",
+      "headers": {
+        "x-matched-path": "/$1"
+      },
+      "continue": true,
+      "important": true
+    },
+    {
+      "handle": "error"
+    },
+    {
+      "src": "/.*",
+      "dest": "/404",
+      "status": 404
+    },
+    {
+      "src": "/.*",
+      "dest": "/500",
+      "status": 500
+    }
+  ],
+  "images": {
+    "domains": [],
+    "sizes": [
+      640,
+      750,
+      828,
+      1080,
+      1200,
+      1920,
+      2048,
+      3840,
+      16,
+      32,
+      48,
+      64,
+      96,
+      128,
+      256,
+      384
+    ],
+    "remotePatterns": [],
+    "minimumCacheTTL": 60,
+    "formats": [
+      "image/webp"
+    ],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "contentDispositionType": "inline"
+  },
+  "overrides": {
+    "404.html": {
+      "path": "404",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "500.html": {
+      "path": "500",
+      "contentType": "text/html; charset=utf-8"
+    }
+  },
+  "framework": {
+    "version": "13.4.19"
+  },
+  "crons": []
+}

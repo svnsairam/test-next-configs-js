@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST=function(e,r){return{__rewrites:{afterFiles:[{has:e,source:"/configJsonRewrite",destination:r},{has:e,source:"/confictRW",destination:r}],beforeFiles:[],fallback:[]},"/_error":["static/chunks/pages/_error-c92d5c4bb2b49926.js"],sortedPages:["/_app","/_error"]}}(void 0,"/about"),self.__BUILD_MANIFEST_CB&&self.__BUILD_MANIFEST_CB();

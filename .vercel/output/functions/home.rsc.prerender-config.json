@@ -1,0 +1,16 @@
+{
+  "type": "Prerender",
+  "expiration": false,
+  "group": 2,
+  "bypassToken": "2b029acbf46ed6e66b8421c563e9412b",
+  "fallback": {
+    "type": "FileFsRef",
+    "mode": 33188,
+    "fsPath": "home.rsc.prerender-fallback.rsc"
+  },
+  "initialHeaders": {
+    "content-type": "text/x-component",
+    "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url"
+  },
+  "allowQuery": []
+}
